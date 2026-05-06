@@ -32,3 +32,4 @@ function print(value: unknown) {
 
 এখানে `typeof` দিয়ে check করার পরে TypeScript বুঝে যায় যে এই block-এর ভেতরে `value` একটা string। এই process-টাই narrowing।
 
+# <<<<<<< HEAD
