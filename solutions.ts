@@ -22,7 +22,7 @@ const checkType = (strOrNum: StringOrNumber): "String" | "Number" => {
   }
 };
 
-const getProperty = <T>(obj: T, key: keyof T) => {
+const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
 };
 
@@ -30,12 +30,10 @@ interface Book {
   title: string;
   author: string;
   publishedYear: number;
-  isRead?: boolean;
 }
 
 const toggleReadStatus = (book: Book) => {
-  book.isRead = true;
-  return book;
+  return { ...book, isRead: true };
 };
 
 class Person {
@@ -65,3 +63,4 @@ const getIntersection = (arr1: number[], arr2: number[]): number[] => {
   const result = arr1.filter((e) => arr2.includes(e));
   return result;
 };
+
